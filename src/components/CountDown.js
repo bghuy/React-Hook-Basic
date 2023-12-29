@@ -4,19 +4,21 @@ class CountDown extends React.Component {
 
     componentDidMount() {
         this.timer = setInterval(() => {
+
             this.setState({ count: this.state.count - 1 });
         }, 1000);
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.count !== this.state.count && this.state.count === 0) {
             if (this.timer) {
+                this.props.onTimeUp();
                 clearInterval(this.timer);
             }
         }
-    }
+    } 
     render() {
         return (
-            <div>
+            <div style={{ color: "white", background: "#282c34", height: "100vh" }}>
                 <h1>Class: {this.state.count}</h1>
             </div>
         )
@@ -39,7 +41,7 @@ const NewCountDown = (props) => {
         return () => {
             clearInterval(timer);
         };
-    }, [hookCount]);
+    }, [hookCount, props]);
 
     return (
         <div>

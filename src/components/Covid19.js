@@ -3,14 +3,15 @@ import { useEffect } from "react";
 import fetch from "./../customize/fetch.js"
 const Covid = (props) => {
     const { data: dataCovid, isLoading } =
-        fetch("https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true")
+        fetch("https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true", true)
 
     useEffect(() => {
         // Log giá trị mới của dataCovid sau khi nó được cập nhật
         console.log("data:", dataCovid);
     }, [dataCovid]);
     return (
-        <>
+        <div style={{ background: "#282c34", color: "white" }}>
+            <h1>Covid tracking</h1>
             <table>
                 <thead>
                     <tr>
@@ -46,7 +47,7 @@ const Covid = (props) => {
 
 
             </table>
-        </>
+        </div>
     )
 }
 
