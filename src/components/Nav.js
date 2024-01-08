@@ -8,6 +8,7 @@ const Nav = () => {
             <NavLink activeClassName="selected" to="/todo" exact>To-do-list</NavLink>
             <NavLink activeClassName="selected" to="/secret" exact>About</NavLink>
             <NavLink activeClassName="selected" to="/blog" exact>Blog tab</NavLink>
+            <NavLink activeClassName="selected" to="/Youtube-search" exact>Youtube search</NavLink>
         </div>
     )
 }

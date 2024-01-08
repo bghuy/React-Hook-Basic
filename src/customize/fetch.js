@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react";
+
 // custom hook must start with "use"
 const useFetch = (url, isCovidData) => {
     const [data, setData

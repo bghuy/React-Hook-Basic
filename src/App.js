@@ -6,12 +6,17 @@ import axios from "axios"
 import ToDo from './components/ToDo.js';
 import Covid from './components/Covid19.js';
 import Blog from './components/Blog.js'
+import DetailBlog from './components/DetailBlog.js';
 import { CountDown, NewCountDown } from './components/CountDown.js';
+import AddNewBlog from './components/AddNewBlog.js';
+import NotFound from './components/NotFound.js';
+import YoutubeSearch from './components/YoutubeSearch.js';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
 const App = () => {
   const [toDos, setToDo] = useState([
@@ -66,6 +71,21 @@ const App = () => {
           </Route>
           <Route exact path="/blog">
             <Blog />
+          </Route>
+          <Route path="/blog/:id" exact>
+            <DetailBlog />
+          </Route>
+          <Route path="/add-new-blog" exact>
+            <AddNewBlog />
+          </Route>
+          <Route path="/Youtube-search" exact>
+            <YoutubeSearch />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+          <Route path="/Youtube-search" exact>
+
           </Route>
         </Switch>
       </div>
